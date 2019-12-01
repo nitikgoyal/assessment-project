@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>    
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/996973c893.js"></script>
+<style>
+
+{
+font-family: Arial, Helvetica, sans-serif;
+margin:0;
+}
+.topnav 
+    {
+    margin-top: 30px;
+  overflow: hidden;
+  background-color: white;
+}
+.head
+{
+
+background-image: url('Images/pilll.jpg');
+background-size:cover;
+margin-top:0px;
+height:auto;
+display:inline-block;
+width:100%;
+}
+
+
+body{
+    overflow-x: hidden;
+  background-image: url('Images/dddd.jpg');
+  font-family: 'Open Sans', sans-serif;
+}
+
+.button {
+    position: relative;
+    height: 20px;
+    top: 20px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.8);
+  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+  padding: 15px 40px;
+  border-radius: 4px;
+  font-weight: normal;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+}
+
+.glow-button:hover {
+  color: rgba(255, 255, 255, 1);
+  box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+}   
+    
+.search 
+{   
+    
+  width: 100%;
+  position: fixed;
+  display: flex;
+}
+
+#searchDoc 
+    {
+  width: 20%;
+  border: 3px solid #00B4CC;
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+#searchDoc:focus{
+  color: #00B4CC;
+}
+
+#searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap
+    {
+  width: 100%;
+  position: absolute;
+  top: 40%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+}
+    
+   .marquee {
+  display: inline-block;
+  white-space: nowrap;
+/*   animation: scrollLeft 38s linear infinite; */
+  padding-left: 101%;
+}
+
+.marquee:hover {
+   animation-play-state: paused
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%)
+  }
+}  
+    </style>
+    </head>
+    
+    
+    <body>
+    
+    
+    <div class="topnav">
+    
+    <a href="index.html" style="float:left; margin:2px;"><img src="Images/logo.jpg" height="60px" width="70px"></a>
+    <a href="drugs A-Z.html" class="button glow-button" style="margin-left:10%;">Drugs A-Z</a>
+    <a href="BMI checker.html" class="button glow-button">BMI CHecker</a>
+    <a href="doctor.html"  class="button glow-button">Consult a Doctor</a>
+  
+    <a href="https://www.facebook.com/" style="float:right;margin:2px;"><img src="Images/facebook.png"></a>
+    <a href="https://twitter.com/" style="float:right;margin:2px;"><img src="Images/twitter.png"></a>
+
+
+</div>
+        
+        <div class="wrap">
+   <div class="search">
+      <input type="text" id="searchDoc" placeholder="Search for doctor...">
+      <button type="submit" id="searchButton" onclick="loadDoc()">
+        <i class="fa fa-search"></i>
+     </button>
+   </div>
+            <table id="table"></table>
+      <div id="Bio" style="color:black;margin-top:20px; "></div>
+</div>
+       
+
+
+        <div class="marquee">Doctors, also known as Physicians, are licensed health professionals who maintain and restore human health through the practice of medicine. They examine patients, review their medical history, diagnose illnesses or injuries, administer treatment and counsel patients on their health and well being.
+        </div>
+        
+        
+          <script src="doctordata.js"></script>
+         <script>
+    
+    var marquee = document.querySelector('.marquee');
+
+var marqueeLength = marquee.clientWidth;
+
+var marqueeTravelTime = Math.ceil( marqueeLength / 100 );
+
+marquee.style.animation = `scrollLeft ${marqueeTravelTime}s linear infinite`;
+
+marquee.addEventListener('mouseover', (e)=>{
+  marquee.style['animation-play-state'] = 'paused';
+})
+
+marquee.addEventListener('mouseout', (e)=>{
+  marquee.style['animation-play-state'] = 'running';
+})
+    </script>
+    </body>
+    
+  
+</html>
