@@ -20,4 +20,4 @@
 
 ## Links For Live Websites
 * myResume            https://nitikgoyal.github.io/resume_update/
-* assessment-project  
+* assessment-project  https://nitikgoyal.github.io/assessment-project/
